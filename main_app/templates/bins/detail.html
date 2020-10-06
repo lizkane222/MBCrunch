@@ -3,8 +3,29 @@
 {% block content %}
 
 
-<h1>HOME MBCrunch</h1>
+<h1>Bin Busy- HBU</h1>
 <hr />
-<p>Verdict Is Out : Did you tip the scales?</p>
+
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">{{ bin.type }}</span>
+        <p>Bin Type: {{ bin.type }}</p>
+        <p>Sponsor: {{ bin.sponsor }}</p>
+        <p>Location: {{ bin.location }}</p>
+        <p>Collection Market: {{ bin.collection_market }}</p>
+        <p>Delivery To Plant Dates: {{ bin.delivery_date }}</p>
+        <p>Delivery Plant Location: {{ bin.delivery_location }}</p>
+        <p>Verified: {{ bin.verified }}</p>
+        <p>Sponsor: {{ bin.sponsor }}</p>
+        <p>Rewards: {{ bin.gives_rewards }}</p>
+    </div>
+    <!-- CARD ACTIONS -->
+    <!-- <div class="card-action"> -->
+        <!-- <a href="{% url 'bins_edit' bin.id %}">Edit</a> -->
+        <!-- <a class="btn red" href="{% url 'cats_delete' cat_id=cat.id %}">Delete</a> -->
+    <!-- </div> -->
+</div>
+
+
 
 {% endblock %}

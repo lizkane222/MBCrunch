@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<h1>Edit {{ bin.name }}</h1>
+
+<form action="{% url 'bins_edit' bin.id %}" method="POST">
+  {% csrf_token %}
+  {{ bin_form.as_p }}
+  <input class="btn" type="submit" value="Update {{bin.name}}">
+</form>
+
+
+
+{% endblock %}
