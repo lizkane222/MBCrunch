@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<h1>Edit {{ collection_market.name }}</h1>
+
+<form action="{% url 'collection_markets_edit' collection_market.id %}" method="POST">
+  {% csrf_token %}
+  {{ collection_market_form.as_p }}
+  <input class="btn" type="submit" value="Update {{collection_market.name}}">
+</form>
+
+
+
+{% endblock %}
