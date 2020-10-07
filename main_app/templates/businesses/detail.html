@@ -3,20 +3,21 @@
 {% block content %}
 
 
-<h1>Bin Busy- HBU</h1>
+<h1>Sponsoring Business</h1>
 <hr />
 
 <div class="card">
     <div class="card-content">
-        <span class="card-title">{{ bin.type }}</span>
-        <p>Bin Type: {{ bin.type }}</p>
+        <span class="card-title">{{ investor.name }}</span>
         <p>Sponsor: {{ investor.name }}</p>
-        <p>Location: {{ bin.location }}</p>
+        <p>Location: {{ investor.current_location }}</p>
         <p>Collection Market: {{ collection_market.name }}</p>
-        <p>Delivery To Plant Dates: {{ bin.delivery_date }}</p>
-        <p>Delivery Plant Location: {{ bin.delivery_location }}</p>
-        <p>Verified: {{ bin.verified }}</p>
-        <p>Rewards: {{ bin.gives_rewards }}</p>
+        <p>Deposits Made: {{ investor.deposits_made }}</p>
+        <p>Community Contributions: {{ investor.community_contributions }}</p>
+        <p>Rewards: {{ investor.gives_rewards }}</p>
+        {% for bins in bin%}
+        <p>{%investor.bin.name%}: {{ investor.bin.name }}</p>
+        {% endfor %}
     </div>
     <!-- CARD ACTIONS -->
     <!-- <div class="card-action"> -->

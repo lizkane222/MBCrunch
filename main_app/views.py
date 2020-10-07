@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from .models import Bin, Person, Investor, Collection_Market
-from .forms import Bin_Form, Investor_Form
+from .forms import Bin_Form, Investor_Form, Person_Form, Collection_Market_Form
 # from.models import Bin
 
 # Create your views here.
@@ -46,7 +46,7 @@ def bins_edit(request, bin_id):
     bin_form = Bin_Form(request.POST, instance=bin)
     if bin_form.is_valid():
       bin_form.save()
-      return redirect('detail', bin_id=bin_id)
+      return redirect('bins_detail', bin_id=bin_id)
   else:  
     # in form(instance=The object that we pull back from db)
     bin_form = Bin_Form(instance=bin)
@@ -89,7 +89,7 @@ def businesses_edit(request, business_id):
     business_form = Business_Form(request.POST, instance=business)
     if business_form.is_valid():
       business_form.save()
-      return redirect('detail', business_id=business_id)
+      return redirect('business_detail', business_id=business_id)
   else:  
     # in form(instance=The object that we pull back from db)
     business_form = Business_Form(instance=business)
@@ -131,7 +131,7 @@ def persons_edit(request, person_id):
     person_form = Person_Form(request.POST, instance=person)
     if person_form.is_valid():
       person_form.save()
-      return redirect('detail', person_id=person_id)
+      return redirect('person_detail', person_id=person_id)
   else:  
     # in form(instance=The object that we pull back from db)
     person_form = Person_Form(instance=person)
@@ -172,7 +172,7 @@ def collection_markets_edit(request, bin_id):
     collection_market_form = Collection_Market_Form(request.POST, instance=collection_market)
     if collection_market_form.is_valid():
       collection_market_form.save()
-      return redirect('detail', collection_market_id=collection_market_id)
+      return redirect('collection_market_detail', collection_market_id=collection_market_id)
   else:  
     # in form(instance=The object that we pull back from db)
     collection_market_form = Collection_Market_Form(instance=collection_market)
