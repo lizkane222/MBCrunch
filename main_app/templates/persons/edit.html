@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<h1>Edit {{ person.name }}</h1>
+
+<form action="{% url 'persons_edit' person.id %}" method="POST">
+  {% csrf_token %}
+  {{ person_form.as_p }}
+  <input class="btn" type="submit" value="Update {{person.name}}">
+</form>
+
+
+
+{% endblock %}

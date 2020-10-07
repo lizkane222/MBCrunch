@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<h1>Edit {{ business.name }}</h1>
+
+<form action="{% url 'businesses_edit' business.id %}" method="POST">
+  {% csrf_token %}
+  {{ business_form.as_p }}
+  <input class="btn" type="submit" value="Update {{business.name}}">
+</form>
+
+
+
+{% endblock %}
